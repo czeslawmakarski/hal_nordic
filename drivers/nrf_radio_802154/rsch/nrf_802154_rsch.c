@@ -226,7 +226,9 @@ static inline void all_prec_update(void)
             {
                 nrf_802154_priority_drop_hfclk_stop_terminate();
                 nrf_802154_clock_hfclk_start();
+                nrf_802154_log(EVENT_SET_STATE, new_prio);
                 nrf_raal_continuous_mode_enter();
+                nrf_802154_log(EVENT_SET_STATE, new_prio);
             }
 
             nrf_802154_wifi_coex_prio_request(new_prio);
