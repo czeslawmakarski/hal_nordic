@@ -31,6 +31,9 @@ zephyr_library_sources(
   timer_scheduler/nrf_802154_timer_sched.c
   )
 
+  zephyr_compile_definitions(
+    ENABLE_DEBUG_LOG=1
+  )
 if (CONFIG_NRF_802154_MULTIPROTOCOL_SUPPORT)
   zephyr_library_sources(
     nrf_802154_swi.c
